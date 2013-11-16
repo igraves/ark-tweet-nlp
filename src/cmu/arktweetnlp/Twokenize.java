@@ -147,6 +147,9 @@ public class Twokenize {
     //optional: lookbehind for \b, max length 15
     static String AtMention = "[@＠][a-zA-Z0-9_]+"; 
 
+    //For Stocktwits Stock Mention
+    static String Stock = "\\$[a-zA-Z]+";
+
     // I was worried this would conflict with at-mentions
     // but seems ok in sample of 5800: 7 changes all email fixes
     // http://www.regular-expressions.info/email.html
@@ -173,7 +176,8 @@ public class Twokenize {
                     decorations,
                     embeddedApostrophe,
                     Hashtag,  
-                    AtMention
+                    AtMention,
+                    Stock
             ));
 
     // Edge punctuation
